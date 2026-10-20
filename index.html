@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find the timezone for your current location or any address.">
+    <title>TimeZone API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>TimeZone API</h1>
+
+        <section class="section" aria-labelledby="current-heading">
+            <h2 id="current-heading">Your Current Time Zone</h2>
+            <div class="timezone-card" id="current-card" aria-live="polite">
+                <p class="status" id="current-status">Requesting your location...</p>
+                <dl class="timezone-details" id="current-details" hidden></dl>
+            </div>
+        </section>
+
+        <section class="section search-section" aria-labelledby="search-heading">
+            <h2 id="search-heading">Find a Time Zone</h2>
+            <form id="address-form" novalidate>
+                <label for="address">Enter an address</label>
+                <div class="search-row">
+                    <input id="address" name="address" type="text"
+                        placeholder="e.g. 221B Baker Street, London" autocomplete="street-address" required>
+                    <button type="submit" id="search-button">Get Time Zone</button>
+                </div>
+                <p class="form-message" id="address-message" role="alert"></p>
+            </form>
+            <div class="timezone-card result-card" id="address-card" aria-live="polite" hidden>
+                <p class="status" id="address-status"></p>
+                <dl class="timezone-details" id="address-details" hidden></dl>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
